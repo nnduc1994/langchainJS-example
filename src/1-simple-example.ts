@@ -1,5 +1,4 @@
-const OPENAI_API_KEY="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";
-// const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
+const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 
 import { OpenAI } from "langchain/llms/openai";
 import { ChatOpenAI } from "langchain/chat_models/openai";
