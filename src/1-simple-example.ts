@@ -1,10 +1,12 @@
-const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
+import 'dotenv/config';
 
 import { OpenAI } from "langchain/llms/openai";
 import { ChatOpenAI } from "langchain/chat_models/openai";
 
 import { PromptTemplate } from "langchain/prompts";
 import { HumanMessage } from "langchain/schema";
+
+const OPENAI_API_KEY = process.env.OPEN_AI_KEY;
 
 const main = async () => {
     const llm = new OpenAI({

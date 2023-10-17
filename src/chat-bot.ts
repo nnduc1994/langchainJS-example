@@ -6,7 +6,7 @@ import { ChatOpenAI } from "langchain/chat_models/openai";
 import { PromptTemplate } from "langchain/prompts";
 import { HumanMessage, SystemMessage } from 'langchain/schema';
 
-const OPENAI_API_KEY = process.env.OPEN_AI_TOKEN;
+const OPENAI_API_KEY = process.env.OPEN_AI_KEY;
 
 const chatModel = new ChatOpenAI({
     temperature: 0.9,
@@ -24,10 +24,10 @@ async function main() {
       const prompt = PromptTemplate.fromTemplate(userInput);
       const formattedPrompt = await prompt.format({})
 
-      const systemMessage = 'You are from 15th centery, speak like one'
+    //   const systemMessage = 'You are from 15th centery, speak like one'
 
       const response = await chatModel.predictMessages([
-        new SystemMessage(systemMessage), 
+        // new SystemMessage(systemMessage), 
         new HumanMessage(formattedPrompt)]
       );
       
