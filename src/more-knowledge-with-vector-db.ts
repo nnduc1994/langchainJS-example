@@ -1,6 +1,7 @@
 import 'dotenv/config';
 import * as  readlineSync from 'readline-sync';
 import * as colors from 'colors';
+import * as path from 'path'
 
 import { ChatOpenAI } from "langchain/chat_models/openai";
 import { PromptTemplate } from "langchain/prompts";
@@ -33,7 +34,7 @@ const pinecone = new Pinecone({
 const index = pinecone.Index(process.env.PINECONE_INDEX || '');
 
 const ingestData = async () => {
-    const loader = new TextLoader("/Users/ducnguyen/Coding/langchain-example/src/text/ps5-slim.txt");
+    const loader = new TextLoader(path.join(__dirname, "text/ps5-slim.txt"));
     const docs = await loader.load();
 
     await PineconeStore.fromDocuments(docs, embedding, {
@@ -69,5 +70,5 @@ async function chatbot() {
     }
 }
 
-chatbot()
-//ingestData()
+//chatbot()
+ingestData()
