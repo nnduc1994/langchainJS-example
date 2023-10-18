@@ -9,8 +9,6 @@ import { HumanMessage, SystemMessage } from 'langchain/schema';
 import { LLMChain } from 'langchain/chains'
 import { BufferMemory } from "langchain/memory";
 
-const OPENAI_API_KEY = process.env.OPEN_AI_KEY;
-
 const chatModel = new ChatOpenAI({
     temperature: 0.9,
   // openAIApiKey: OPENAI_API_KEY
