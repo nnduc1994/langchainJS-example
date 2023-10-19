@@ -5,7 +5,6 @@ import * as colors from 'colors';
 import { initializeAgentExecutorWithOptions } from "langchain/agents";
 import { ChatOpenAI } from "langchain/chat_models/openai";
 import { DynamicTool } from "langchain/tools";
-import { PromptTemplate } from "langchain/prompts";
 
 // import { SerpAPI } from "langchain/tools";
 import { Calculator } from "langchain/tools/calculator";
@@ -27,16 +26,14 @@ const getEmmployeeDataFunction = async () => {
 
 const getEmployeeTool = new DynamicTool({
     name: 'Get_employee_data',
-    description: 'Call this function when user asking people who work in Nordcloud',
+    description: 'Call this function when user asking about people who work in Nordcloud',
     func: async () => await getEmmployeeDataFunction()
 })
 
-const tools = [getEmployeeTool];
+const tools = [getEmployeeTool, new Calculator()];
 
 
 const main = async () => {
-    const prompt = PromptTemplate.fromTemplate('{userInput}');
-
     const executor = await initializeAgentExecutorWithOptions(tools, chatModel ,{
         agentType: "openai-functions",
         //verbose: true,
@@ -53,7 +50,6 @@ const main = async () => {
         
         console.log(colors.green(`Bot: ${response}`))
       }
-
 }
 
 
