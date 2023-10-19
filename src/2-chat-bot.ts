@@ -59,5 +59,5 @@ const chatbotWithMemory = async () => {
   }
 }
 
-chatbotWithMemory();
-//chatbot()
+//chatbotWithMemory();
+chatbot()

@@ -21,7 +21,8 @@ const getEmmployeeDataFunction = async () => {
         skills: ['Typescript', 'Javascript', 'AWS', 'Complaining'],
         location: 'Finland',
         hasDog: true,
-    }))
+    },
+    ))
 }
 
 const getEmployeeTool = new DynamicTool({
@@ -48,10 +49,9 @@ const main = async () => {
   
         if(userInput === 'exit') return;
       
-          const response = await executor.run(userInput);
+        const response = await executor.run(userInput);
         
-          console.log("x", response)
-        // console.log(colors.green(`Bot: ${response.content}`))
+        console.log(colors.green(`Bot: ${response}`))
       }
 
 }
