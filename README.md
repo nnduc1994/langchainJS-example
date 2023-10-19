@@ -1,7 +1,7 @@
 <a href="https://www.buymeacoffee.com/nnduc1994h" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
 
-# langchainJS example:
-This repository incldues some examples that covers different usage of langchainJS (and open AI's LLM):
+# langchainJS examples:
+This repository includes some examples that cover different usages of langchainJS (and open AI's LLM):
  * **1-simple-example.ts** A quick and simple tutorial on how to get started with Langchain JS, an example of 2 different model: Open AI LLM and Open AI ChatModel
  * **2-chat-bot.ts** How to build a chatbot with nodeJS and langchain. Introducing the concept of `chain` and adding (buffer) memory to the chatbot
  * **3-more-knowledge-with-vector-db.ts** How to "load" a text file (in the example, a transcript from youtube video), embedding it saving it to Pinecone vector database and building a QAchatbot with extra knowledge (from the processed file). Try to ask question about "PS5 slim" (which info only available from the .txt and not the base LLM model) - Remember to run ingest function before asking question about PS5 slim
