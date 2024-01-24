@@ -9,6 +9,8 @@ This repository includes some examples that cover different usages of langchainJ
  * **3-more-knowledge-with-vector-db.ts** How to "load" a text file (in the example, a transcript from youtube video), embedding it saving it to Pinecone vector database and building a QAchatbot with extra knowledge (from the processed file). Try to ask question about "PS5 slim" (which info only available from the .txt and not the base LLM model) - Remember to run ingest function before asking question about PS5 slim
  
  * **4-agent.ts** How to enable LLM to do more with agents and tools. This example give the LLM a simple tool call "getEmployeeTool" which allows the LLM to get more information about (sample info) of Nordcloud employee. Try to ask question like "does anyone in Nordcloud know Typescript ?"
+
+ * **5-generate-robot-code.ts** Attempt to generate python robot code which performs an e2e test. The idea here is to have the LLM model to read a user story (for example: a Jira ticket) and generate the executable Robot framework code. This can be tested by running the ts file and then `python3 -m robot -d Results text/<name>.robot` to run the Robot script. This used a simple webpage as a testing candidate.
  
 
 ## How to run an example:
